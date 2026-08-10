@@ -4,6 +4,7 @@ import tkinter as tk
 from HomePage import HomePage
 from guides import GuidesPage
 from guide_1 import Guide1Page 
+from loginpage import LoginPage
 
 
 class App(tk.Tk):
@@ -75,7 +76,7 @@ class App(tk.Tk):
         self.pages = {}
 
         # Create pages
-        for Page in (HomePage, GuidesPage, Guide1Page):
+        for Page in (HomePage, GuidesPage, Guide1Page, LoginPage):
 
             page = Page(self.container,self)
 
@@ -103,6 +104,16 @@ class App(tk.Tk):
             fg="white",
             command=lambda:self.show_page("GuidesPage")
         ).grid(row=1,column=0,padx=15,pady=15)
+
+        tk.Button(
+            sidebar,
+            text="Login",
+            font=("Arial",14),
+            width=15,
+            bg="#2B2B2B",
+            fg="white",
+            command=lambda:self.show_page("LoginPage")
+        ).grid(row=2,column=0,padx=15,pady=15)
 
         # Show Home first
         self.show_page("HomePage")

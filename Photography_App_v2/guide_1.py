@@ -22,10 +22,15 @@ class Guide1Page(tk.Frame):
 This guide teaches:
 
 • Aperture
+  Aperture is how you conrtol the amount of light that hits the secner. 
+  It is also what cuses bokae or background blur. 
+  Too much light hitting the secenr, meaning a higher apeture will result in a brighter image, farther focal point, 
+  and less background blur.
 • ISO
 • Shutter Speed
 • Focus
 • White Balance
+(There will be more information added to this guide later)
 """,
             font=("Arial",18),
             bg="#515151",
