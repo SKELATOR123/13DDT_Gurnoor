@@ -1,6 +1,6 @@
 # Assist Photography
 
-A desktop app for beginner photographers. Log in, read guides on Aperture,
+A app for beginner photographers. Log in, read guides on Aperture,
 ISO, and Shutter Speed, get a random photography tip, and ask an AI helper
 photography questions.
 

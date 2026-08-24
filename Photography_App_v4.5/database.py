@@ -19,6 +19,10 @@ cursor.execute('''
 conn.commit()
 
 
+MIN_USERNAME_LENGTH = 3
+MIN_PASSWORD_LENGTH = 6
+
+
 def hash_password(password):
     """Turns a password into a scrambled hash so the real password is never stored."""
     return hashlib.sha256(password.encode()).hexdigest()
@@ -26,8 +30,21 @@ def hash_password(password):
 
 def register_user(username, password):
     """Adds a new user to the database. Returns (True, message) or (False, message)."""
+
+    # .strip() removes leading/trailing spaces first, so something like "   "
+    # gets caught as empty instead of sneaking through as a "valid" username
+    username = username.strip()
+    password = password.strip()
+
     if not username or not password:
         return False, "Fields cannot be empty."
+
+    if len(username) < MIN_USERNAME_LENGTH:
+        return False, f"Username must be at least {MIN_USERNAME_LENGTH} characters."
+
+    if len(password) < MIN_PASSWORD_LENGTH:
+        return False, f"Password must be at least {MIN_PASSWORD_LENGTH} characters."
+
     hashed = hash_password(password)
 
     try:
