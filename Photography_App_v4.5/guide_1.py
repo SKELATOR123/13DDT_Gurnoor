@@ -35,7 +35,7 @@ class Guide1Page(tk.Frame):
         # ---- Page content (goes inside "content", not "self", so it scrolls) ----
         title = tk.Label(
             content,
-            text="Camera Basics",
+            text="Understanding Aperture",
             font=("Arial", 30),
             bg="#515151",
             fg="white"
